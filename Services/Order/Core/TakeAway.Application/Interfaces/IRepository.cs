@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using TakeAway.Domain.Entities;
 
 namespace TakeAway.Application.Interfaces
 {
@@ -15,5 +16,6 @@ namespace TakeAway.Application.Interfaces
 		Task UpdateAsync(T entity);
 		Task DeleteAsync(int id);
 		Task<T> GetByFilterAsync(Expression<Func<T, bool>> filter);
+		Task<Ordering> GetByIdAsync(string orderingId);
 	}
 }

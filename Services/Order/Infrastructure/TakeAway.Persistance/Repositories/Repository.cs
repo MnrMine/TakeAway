@@ -6,6 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using TakeAway.Application.Interfaces;
+using TakeAway.Domain.Entities;
 using TakeAway.Persistance.Context;
 
 namespace TakeAway.Persistance.Repositories
@@ -43,6 +44,11 @@ namespace TakeAway.Persistance.Repositories
 		public async Task<T> GetByIdAsync(int id)
 		{
 			return await _context.Set<T>().FindAsync();
+		}
+
+		public Task<Ordering> GetByIdAsync(string orderingId)
+		{
+			throw new NotImplementedException();
 		}
 
 		public async Task UpdateAsync(T entity)
